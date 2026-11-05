@@ -1,0 +1,29 @@
+name: Construir EXE Windows
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Obter código
+        uses: actions/checkout@v4
+
+      - name: Preparar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Instalar compilador
+        run: python -m pip install pyinstaller
+
+      - name: Compilar aplicação
+        run: pyinstaller --noconfirm --clean --onefile --windowed --name WiFiRecoveryPro wifi_recovery_pro_v2.py
+
+      - name: Disponibilizar EXE
+        uses: actions/upload-artifact@v4
+        with:
+          name: WiFiRecoveryPro-Windows
+          path: dist/WiFiRecoveryPro.exe
