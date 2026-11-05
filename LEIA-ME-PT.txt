@@ -1,0 +1,35 @@
+WiFi Recovery Pro — Kit para gerar EXE Windows sem instalar Python no seu PC
+
+IMPORTANTE
+Este kit usa o GitHub Actions para compilar o EXE num computador Windows na nuvem.
+O utilizador NÃO precisa de instalar Python no seu computador.
+
+PASSOS
+1. Crie uma conta gratuita em https://github.com/ (se ainda não tiver).
+2. No GitHub, clique em New repository e crie um repositório chamado WiFiRecoveryPro.
+3. Escolha Public ou Private e clique em Create repository.
+4. Carregue TODOS os ficheiros e pastas deste ZIP para o repositório, mantendo a estrutura:
+   - wifi_recovery_pro_v2.py
+   - .github/workflows/build-windows-exe.yml
+5. Abra o separador Actions do repositório.
+6. Escolha "Construir EXE Windows" na lista à esquerda.
+7. Clique em Run workflow e confirme em Run workflow.
+8. Quando terminar com um visto verde, abra a execução e descarregue o artefacto
+   WiFiRecoveryPro-Windows na secção Artifacts.
+9. Extraia o ZIP descarregado. Dentro estará WiFiRecoveryPro.exe.
+
+O que contém a aplicação
+- Scanner de redes próximas via Windows netsh.
+- Identificação de autenticação, encriptação, sinal e canal quando fornecidos pelo Windows.
+- Lista de perfis Wi-Fi guardados no computador.
+- Consulta de chaves já guardadas localmente, sujeita às permissões do Windows.
+- Informação do adaptador e exportação de relatório.
+
+Limites de segurança
+A aplicação faz diagnóstico passivo e recuperação de credenciais já guardadas localmente.
+Não quebra passwords, não contorna WPA/WPA2/WPA3, não executa ataques WPS nem tenta entrar
+em redes sem credenciais.
+
+Nota de confiança
+O EXE é compilado pelo GitHub Actions a partir do código incluído neste kit. O Windows SmartScreen
+pode ainda apresentar um aviso porque o executável não terá assinatura digital de editor conhecido.
