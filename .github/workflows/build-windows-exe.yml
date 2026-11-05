@@ -20,7 +20,7 @@ jobs:
         run: python -m pip install pyinstaller
 
       - name: Compilar aplicação
-        run: pyinstaller --noconfirm --clean --onefile --windowed --name WiFiRecoveryPro wifi_recovery_pro_v2.py
+        run: pyinstaller --noconfirm --clean --onefile --windowed --name WiFiRecoveryPro wifi_recovery_pro_v3.py
 
       - name: Disponibilizar EXE
         uses: actions/upload-artifact@v4
